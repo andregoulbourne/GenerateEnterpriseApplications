@@ -77,7 +77,27 @@ public class POMDependencies {
 				+ "				</configuration>\r\n"
 				+ "			</plugin>\r\n"
 				+ "		</plugins>\r\n"
-				+ "	</build>";
+				+ "	</build>"
+				+ "<dependencyManagement>\r\n"
+				+ "		<dependencies>\r\n"
+				+ "			<dependency>\r\n"
+				+ "				<groupId>org.springframework.cloud</groupId>\r\n"
+				+ "				<artifactId>spring-cloud-dependencies</artifactId>\r\n"
+				+ "				<version>2020.0.2</version>\r\n"
+				+ "				<scope>import</scope>\r\n"
+				+ "				<type>pom</type>\r\n"
+				+ "			</dependency>\r\n"
+				+ "			<dependency>\r\n"
+				+ "				<groupId>org.springframework.boot</groupId>\r\n"
+				+ "				<artifactId>spring-boot-dependencies</artifactId>\r\n"
+				+ "				<version>2.4.5</version>\r\n"
+				+ "				<scope>import</scope>\r\n"
+				+ "				<type>pom</type>\r\n"
+				+ "			</dependency>\r\n"
+				+ "		</dependencies>\r\n"
+				+ "	</dependencyManagement>"
+				+ ""
+				+ "";
 	}
 
 }
