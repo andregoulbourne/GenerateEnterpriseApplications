@@ -4,6 +4,7 @@ import static com.andre.util.Util.util;
 //Can package name be the same
 
 import java.util.List;
+import java.util.Scanner;
 
 import com.andre.generations.ApplicationProperitiesFileGeneration;
 import com.andre.generations.GenerateController;
@@ -25,6 +26,9 @@ public class Driver {
 	}
 		
 	public static void run() {
+		
+		util.setScanner();
+		
 		System.out.println("Enter 1 for Test, Enter 2 for Features, Enter 3 to Exit");
 		System.out.println(" ------------------------");
 		System.out.println("|Main Menu               |");
@@ -35,6 +39,7 @@ public class Driver {
 		} else if(section == 1) {
 			runTest();
 		} else if(section == 3){
+			util.closeScanner();
 			System.exit(0);
 		} else {
 			run();

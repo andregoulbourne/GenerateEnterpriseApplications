@@ -52,24 +52,30 @@ public class Util {
 	}
 
 	private List<String> strings;
+	
+	private Scanner in;
+	
+	public void setScanner() {
+		in = new Scanner(System.in);
+	}
+	
+	public void closeScanner() {
+		in.close();
+	}
 
 	public int scanInt() {
 		try {
-		Scanner in = new Scanner(System.in);
-		int number = in.nextInt();
-		return number;
+		 return Integer.parseInt(in.nextLine());
 		} catch(InputMismatchException e) {
 			System.out.println("Sorry, Invalid input");
 			System.out.println("Try again");
-		}
+		} 
 		return scanInt();
 	}
 
 	public double scanDouble() {
-		try {
-			Scanner in = new Scanner(System.in);
-			double number = in.nextDouble();
-			return number;
+		try{
+			return Double.parseDouble(in.nextLine());
 			} catch(InputMismatchException e) {
 				System.out.println("Sorry, Invalid input");
 				System.out.println("Try again");
@@ -78,9 +84,13 @@ public class Util {
 	}
 
 	public String scanString() {
-			Scanner in = new Scanner(System.in);
+			try {
 			String string = in.nextLine();
 			return getRidOfWhiteSpace(string);
+			} catch(Exception e) {
+				e.printStackTrace();
+				return "";
+			}
 	}
 
 	public void setStrings() {
